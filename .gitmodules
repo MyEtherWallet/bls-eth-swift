@@ -1,0 +1,12 @@
+[submodule "bls_framework/Sources/mcl"]
+	path = bls_framework/Sources/mcl
+	url = https://github.com/herumi/mcl.git
+[submodule "bls_framework/Sources/bls"]
+	path = bls_framework/Sources/bls
+	url = https://github.com/herumi/bls.git
+[submodule "bls_frameworks/Sources/bls"]
+	path = bls_frameworks/Sources/bls
+	url = https://github.com/herumi/bls.git
+[submodule "bls_frameworks/Sources/mcl"]
+	path = bls_frameworks/Sources/mcl
+	url = https://github.com/herumi/mcl.git

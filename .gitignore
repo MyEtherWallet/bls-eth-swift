@@ -1,0 +1,8 @@
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
+/bls_framework/archives/*
+/bls_framework/bls_framework.xcframework
+/.swiftpm

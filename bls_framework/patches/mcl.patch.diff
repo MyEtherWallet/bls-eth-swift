@@ -1,0 +1,24 @@
+diff --git a/include/mcl/bn.h b/include/mcl/bn.h
+index d553066..5a49973 100644
+--- a/include/mcl/bn.h
++++ b/include/mcl/bn.h
+@@ -110,7 +110,7 @@ typedef struct {
+ 
+ #endif
+ 
+-#include <mcl/curve_type.h>
++#include <bls_framework/curve_type.h>
+ 
+ #define MCLBN_IO_EC_AFFINE 0
+ #define MCLBN_IO_EC_PROJ 1024
+diff --git a/include/mcl/bn_c384_256.h b/include/mcl/bn_c384_256.h
+index bb7045a..f01133b 100644
+--- a/include/mcl/bn_c384_256.h
++++ b/include/mcl/bn_c384_256.h
+@@ -8,5 +8,5 @@
+ */
+ #define MCLBN_FP_UNIT_SIZE 6
+ #define MCLBN_FR_UNIT_SIZE 4
+-#include <mcl/bn.h>
++#include <bls_framework/bn.h>
+ 

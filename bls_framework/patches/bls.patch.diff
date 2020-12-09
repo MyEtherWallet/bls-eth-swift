@@ -1,0 +1,13 @@
+diff --git a/include/bls/bls.h b/include/bls/bls.h
+index 5e4c794..9f65284 100644
+--- a/include/bls/bls.h
++++ b/include/bls/bls.h
+@@ -7,7 +7,7 @@
+ 	http://opensource.org/licenses/BSD-3-Clause
+ */
+ #define MCLBN_NO_AUTOLINK
+-#include <mcl/bn.h>
++#include <bls_framework/bn.h>
+ 
+ #ifdef BLS_ETH
+ 	#define BLS_COMPILER_TIME_VAR_ADJ 200
