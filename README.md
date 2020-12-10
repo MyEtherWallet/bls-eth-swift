@@ -54,10 +54,11 @@ blsGetPublicKey(&publicKey, &secretKey)
 
 ##### Eth2 Public Key
 ```swift
-var publicKeyBytes = Data(count: 1024).bytes // [UInt8]
-blsPublicKeySerialize(&publicKeyBytes, 1024, &publicKey)
+let PUBLIC_KEY_SIZE = 48
+var publicKeyBytes = Data(count: PUBLIC_KEY_SIZE).bytes // [UInt8]
+blsPublicKeySerialize(&publicKeyBytes, PUBLIC_KEY_SIZE, &publicKey)
 
-return Data(publicKeyBytes[0..<48])
+return Data(publicKeyBytes)
 ```
 
 ## Swift versions support
