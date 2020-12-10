@@ -19,7 +19,7 @@ let package = Package(
     ),
     .binaryTarget(
        name: "bls_framework",
-       url: "https://github.com/Foboz/bls/raw/master/bls_framework.xcframework.zip",
+       url: "https://github.com/MyEtherWallet/bls/raw/master/bls_framework.xcframework.zip",
        checksum: "2187838d3c2797153f2a2aec17177f70cd8878b3055806f3c6dda92dab6d6498"
     )
   ]
