@@ -15,7 +15,7 @@
 @implementation BLSInterface
 
 + (BOOL) blsInitWithError:(NSError **)error {
-  __block int err;
+  __block int err = 0;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     err = blsInit(MCL_BLS12_381, MCLBN_COMPILED_TIME_VAR);
