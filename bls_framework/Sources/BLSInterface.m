@@ -21,7 +21,7 @@
     err = blsInit(MCL_BLS12_381, MCLBN_COMPILED_TIME_VAR);
     if (err == 0) {
       // use the latest eth2.0 spec
-      blsSetETHmode(BLS_ETH_MODE_LATEST);
+      blsSetETHmode(BLS_ETH_MODE_OLD);
     }
   });
   if (err == 0) {
