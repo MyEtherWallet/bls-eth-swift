@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char bls_frameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <bls_framework/PublicHeader.h>
 
-#define BLS_ETH
+//#define BLS_ETH
 #import <bls_framework/BLSInterface.h>
 #import <bls_framework/bn_c384_256.h>
 #import <bls_framework/bls.h>
