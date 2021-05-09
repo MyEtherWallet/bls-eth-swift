@@ -19,7 +19,7 @@ let package = Package(
     ),
     .binaryTarget(
        name: "bls_framework",
-       url: "https://github.com/khaninejad/bls-eth-swift/raw/34910d6cfd00ae749a1d741088482ba512e3f1fc/bls_framework.xcframework.zip"
+       url: "https://github.com/khaninejad/bls-eth-swift/raw/main/bls_framework.xcframework.zip"
     )
   ]
 )
