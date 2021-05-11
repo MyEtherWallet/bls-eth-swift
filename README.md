@@ -5,9 +5,12 @@
 
 **Note**: this framework doesn't provide a way to derive Eth2 secret key ([eip-2333](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2333.md)). Please use your own implementation
 
-## bls-eth-swift
+## bls-swift
 
-bls-eth-swift provides convenient way to integrate https://github.com/herumi/bls-eth-go-binary
+  
+This is a subversion of https://github.com/MyEtherWallet/bls-eth-swift/ without `BLS_ETH=1` 
+Compile the package, build your own Swift package include it in your project. If you face *.h error, like couldn't find an "mcl/bn.h", then manually remove the "mcl/" from the include section to reference it directly.
+Don't forget to upload _dSYM_ files as well.
 
 ## Requirements
 Good mood
