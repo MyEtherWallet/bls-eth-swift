@@ -12,6 +12,7 @@
 #import <bls_framework/bn_c384_256.h>
 #import <bls_framework/bls.h>
 
+
 @implementation BLSInterface
 
 + (BOOL) blsInitWithError:(NSError **)error {

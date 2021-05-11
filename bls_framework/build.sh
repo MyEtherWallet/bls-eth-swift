@@ -6,13 +6,13 @@ XCFRAMEWORKZIP_NAME=${PROJECT_NAME}.xcframework.zip
 SCRIPT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 BUILD_PATH=`dirname $SCRIPT`
 
-echo "Preparing mcl..."
-echo "Applying patch"
-$(cd Sources/mcl && git reset --hard && git apply ../../patches/mcl.patch.diff)
+# echo "Preparing mcl..."
+# echo "Applying patch"
+# $(cd Sources/mcl && git reset --hard && git apply ../../patches/mcl.patch.diff)
 
-echo "Preparing bls..."
-echo "Applying patch"
-$(cd Sources/bls && git reset --hard && git apply ../../patches/bls.patch.diff)
+# echo "Preparing bls..."
+# echo "Applying patch"
+# $(cd Sources/bls && git reset --hard && git apply ../../patches/bls.patch.diff)
 
 BUILD_MATRIX_WIDTH=5
 buildmatrix=()
@@ -22,18 +22,18 @@ buildmatrix=()
 buildmatrix+=("iOS Simulator"       ""                  "x64"     "i386"            false)
 #iOS
 buildmatrix+=("iOS"                 ""                  "x64"     "armv7"           true)
-#buildmatrix+=("iOS"                 ""                  "x32"     "arm64"           true) #Use in case if you need 32bit-support
-#macOS
-buildmatrix+=("macOS"               ""                  "x64"     ""                false)
-#watchOS
-buildmatrix+=("watchOS"             ""                  "x64"     "armv7k"          true)
-#buildmatrix+=("watchOS"             ""                  "x32"     "arm64_32"        true) #Use in case if you need 32bit-support
-#watchOS Simulator
-buildmatrix+=("watchOS Simulator"   ""                  "x64"     ""                false)
-#tvOS
-buildmatrix+=("tvOS"                ""                  "x64"     ""                true)
-#tvOS Simulator
-buildmatrix+=("tvOS Simulator"      ""                  "x64"     ""                false)
+##buildmatrix+=("iOS"                 ""                  "x32"     "arm64"           true) #Use in case if you need 32bit-support
+##macOS
+#buildmatrix+=("macOS"               ""                  "x64"     ""                false)
+##watchOS
+#buildmatrix+=("watchOS"             ""                  "x64"     "armv7k"          true)
+##buildmatrix+=("watchOS"             ""                  "x32"     "arm64_32"        true) #Use in case if you need 32bit-support
+##watchOS Simulator
+#buildmatrix+=("watchOS Simulator"   ""                  "x64"     ""                false)
+##tvOS
+#buildmatrix+=("tvOS"                ""                  "x64"     ""                true)
+##tvOS Simulator
+#buildmatrix+=("tvOS Simulator"      ""                  "x64"     ""                false)
 
 count=$((${#buildmatrix[@]}/$BUILD_MATRIX_WIDTH))
 
@@ -80,11 +80,11 @@ while [ $i -lt ${count} ]
     i=$[$i+1]
 done
 
-echo "Reverting mcl..."
-$(cd Sources/mcl && git reset --hard)
+# echo "Reverting mcl..."
+# $(cd Sources/mcl && git reset --hard)
 
-echo "Reverting bls..."
-$(cd Sources/bls && git reset --hard)
+# echo "Reverting bls..."
+# $(cd Sources/bls && git reset --hard)
 
 rm -r ${XCFRAMEWORK_NAME}
 xcodebuild -create-xcframework ${FRAMEWORKS} -output ${XCFRAMEWORK_NAME}
