@@ -8,9 +8,10 @@
 
 #import "BLSInterface.h"
 
-#define BLS_ETH 1
+//#define BLS_ETH 1
 #import <bls_framework/bn_c384_256.h>
 #import <bls_framework/bls.h>
+
 
 @implementation BLSInterface
 
@@ -21,7 +22,7 @@
     err = blsInit(MCL_BLS12_381, MCLBN_COMPILED_TIME_VAR);
     if (err == 0) {
       // use the latest eth2.0 spec
-      blsSetETHmode(BLS_ETH_MODE_LATEST);
+      blsSetETHmode(BLS_ETH_MODE_OLD);
     }
   });
   if (err == 0) {

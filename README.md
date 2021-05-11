@@ -5,9 +5,12 @@
 
 **Note**: this framework doesn't provide a way to derive Eth2 secret key ([eip-2333](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2333.md)). Please use your own implementation
 
-## bls-eth-swift
+## bls-swift
 
-bls-eth-swift provides convenient way to integrate https://github.com/herumi/bls-eth-go-binary
+  
+This is a subversion of https://github.com/MyEtherWallet/bls-eth-swift/ without `BLS_ETH=1` 
+Compile the package, build your own Swift package include it in your project. If you face *.h error, like couldn't find an "mcl/bn.h", then manually remove the "mcl/" from the include section to reference it directly.
+Don't forget to upload _dSYM_ files as well.
 
 ## Requirements
 Good mood
@@ -19,11 +22,7 @@ Good mood
 ## Installation
 ### Swift Package Manager
 
-You can use [Swift Package Manager](https://swift.org/package-manager/) and specify dependency in `Package.swift` by adding this:
-
-```swift
-.package(url: "https://github.com/MyEtherWallet/bls-eth-swift.git", .upToNextMajor(from: "1.0.0"))
-```
+Build your own local Swift Package and include it in your project.
 
 ### XCFramework
 
@@ -61,6 +60,36 @@ blsPublicKeySerialize(&publicKeyBytes, PUBLIC_KEY_SIZE, &publicKey)
 return Data(publicKeyBytes)
 ```
 
+##### Private and Public Key Generate
+Install [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)  and import 
+```swift
+    do {
+             try   BLSInterface.blsInit()
+            } catch {
+                
+            }
+            var sec = blsSecretKey.init()
+            blsSecretKeySetByCSPRNG(&sec)
+            
+            
+            let SECRET_KEY_SIZE = 32
+            var secretKeyBytes = Data(count: SECRET_KEY_SIZE).bytes // [UInt8]
+            blsSecretKeySerialize(&secretKeyBytes, SECRET_KEY_SIZE, &sec)
+            print(Data(secretKeyBytes).hexEncodedString())
+    
+     
+            
+            var pub = blsPublicKey.init()
+            blsGetPublicKey(&pub, &sec);
+            
+            let PUBLIC_KEY_SIZE = 48
+            var publicKeyBytes = Data(count: PUBLIC_KEY_SIZE).bytes // [UInt8]
+            blsPublicKeySerialize(&publicKeyBytes, PUBLIC_KEY_SIZE, &pub)
+            print(Data(publicKeyBytes).hexEncodedString())
+            
+```
+  
+  
 ## Swift versions support
 
 - Swift 5.0 and newer, branch [master](https://github.com/MyEtherWallet/bls-eth-swift/tree/master)
