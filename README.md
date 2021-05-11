@@ -22,11 +22,7 @@ Good mood
 ## Installation
 ### Swift Package Manager
 
-You can use [Swift Package Manager](https://swift.org/package-manager/) and specify dependency in `Package.swift` by adding this:
-
-```swift
-.package(url: "https://github.com/MyEtherWallet/bls-eth-swift.git", .upToNextMajor(from: "1.0.0"))
-```
+Build your own local Swift Package and include it in your project.
 
 ### XCFramework
 
