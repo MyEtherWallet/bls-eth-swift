@@ -91,7 +91,7 @@ xcodebuild -create-xcframework ${FRAMEWORKS} -output ${XCFRAMEWORK_NAME}
 
 XCFRAMEWORKZIP_PATH=../${XCFRAMEWORKZIP_NAME}
 rm -r ${XCFRAMEWORKZIP_PATH}
-zip -vr ${XCFRAMEWORKZIP_PATH} ${XCFRAMEWORK_NAME} -x "*.DS_Store"
+zip --symlinks -vr ${XCFRAMEWORKZIP_PATH} ${XCFRAMEWORK_NAME} -x "*.DS_Store"
 echo "XCFFramework checksum: " $(swift package compute-checksum ${XCFRAMEWORKZIP_PATH})
 
 open ${BUILD_PATH}
