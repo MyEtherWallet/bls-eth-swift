@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -15,12 +15,17 @@ let package = Package(
   targets: [
     .target(
       name: "bls-eth-swift",
-      dependencies: ["bls_framework"]
+      dependencies: ["bls_framework"],
+      path: "bls_framework/Sources",
+      exclude: [
+        "bls",
+        "mcl"
+      ]
     ),
     .binaryTarget(
        name: "bls_framework",
-       url: "https://github.com/MyEtherWallet/bls-eth-swift/releases/download/1.0.0/bls_framework.xcframework.zip",
-       checksum: "2187838d3c2797153f2a2aec17177f70cd8878b3055806f3c6dda92dab6d6498"
+       url: "https://github.com/MyEtherWallet/bls-eth-swift/blob/feature/package_update/bls_framework.xcframework.zip",
+       checksum: "e9a93d997a587763725038524a19f44ad4ea0ae2bb1c7d37e9af57aa91439b30"
     )
   ]
 )
