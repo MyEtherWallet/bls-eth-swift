@@ -25,7 +25,7 @@ let package = Package(
     .binaryTarget(
        name: "bls_framework",
        url: "https://github.com/MyEtherWallet/bls-eth-swift/releases/download/pre-1.0.1/bls_framework.xcframework.zip",
-       checksum: "e9a93d997a587763725038524a19f44ad4ea0ae2bb1c7d37e9af57aa91439b30"
+       checksum: "3a97beeccb389187128bc08fa0a6576d72ae9872dc59facef8412af5400951de"
     )
   ]
 )
