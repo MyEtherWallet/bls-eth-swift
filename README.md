@@ -15,6 +15,7 @@ Good mood
 ## Features
 - Easy to use
 - Precompiled sources
+- Safe to use with app extensions
 
 ## Installation
 ### Swift Package Manager
